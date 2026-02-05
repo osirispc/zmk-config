@@ -1,0 +1,21 @@
+/ {
+    chosen {
+        zmk,underglow = &underglow;
+    };
+
+    underglow: underglow {
+        compatible = "worldsemi,ws2812-spi";
+        /* 12 total if you truly have 6 per half and global strip length is total,
+           but many setups treat each half separately. Start with 6 here. */
+        chain-length = <6>;
+        color-mapping = <1 0 2>; /* GRB */
+        spi-dev = <&spi1>;
+    };
+};
+
+&spi1 {
+    status = "okay";
+    /* Pick a MOSI pin used for the LED data line */
+    /* TRY #1 (common on nice!nano builds): P0.22 (a.k.a. D4) */
+    mosi-pin = <22>;
+};
