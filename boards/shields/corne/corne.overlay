@@ -1,0 +1,12 @@
+/ {
+    chosen {
+        zmk,underglow = &underglow;
+    };
+
+    underglow: underglow {
+        compatible = "zmk,rgb-underglow";
+        chain-length = <6>;
+        color-order = <1>;
+        spi-dev = <&spi1>;
+    };
+};
