@@ -1,0 +1,57 @@
+/ {
+    macros {
+        compatible = "zmk,behavior-macro";
+
+        /* BASE (Town) warm white */
+        base_color: base_color {
+            compatible = "zmk,behavior-macro";
+            label = "BASE_COLOR";
+            #binding-cells = <0>;
+            bindings = <
+                &macro_tap &rgb_ug RGB_COLOR_HSB(30,10,90)
+            >;
+        };
+
+        /* NAV = BLACK LODGE (deep red) */
+        nav_color: nav_color {
+            compatible = "zmk,behavior-macro";
+            label = "NAV_COLOR";
+            #binding-cells = <0>;
+            bindings = <
+                &macro_press &mo 1
+                &macro_tap &rgb_ug RGB_COLOR_HSB(0,100,60)
+                &macro_pause_for_release
+                &macro_release &mo 1
+                &macro_tap &rgb_ug RGB_COLOR_HSB(30,10,90)
+            >;
+        };
+
+        /* NUM = WHITE LODGE (ice blue) */
+        num_color: num_color {
+            compatible = "zmk,behavior-macro";
+            label = "NUM_COLOR";
+            #binding-cells = <0>;
+            bindings = <
+                &macro_press &mo 2
+                &macro_tap &rgb_ug RGB_COLOR_HSB(200,60,80)
+                &macro_pause_for_release
+                &macro_release &mo 2
+                &macro_tap &rgb_ug RGB_COLOR_HSB(30,10,90)
+            >;
+        };
+
+        /* SYM = RED ROOM crimson */
+        sym_color: sym_color {
+            compatible = "zmk,behavior-macro";
+            label = "SYM_COLOR";
+            #binding-cells = <0>;
+            bindings = <
+                &macro_press &mo 3
+                &macro_tap &rgb_ug RGB_COLOR_HSB(350,95,70)
+                &macro_pause_for_release
+                &macro_release &mo 3
+                &macro_tap &rgb_ug RGB_COLOR_HSB(30,10,90)
+            >;
+        };
+    };
+};
