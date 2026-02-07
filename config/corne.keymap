@@ -1,11 +1,12 @@
 #include <behaviors.dtsi>
+#include <dt-bindings/zmk/backlight.h>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/rgb.h>
+
 /* --- Keebmaker Corne: 21 per-key + 6 underglow = 27 LEDs per half --- */
-&led_strip {
-    chain-length = <27>;
-};
+
+&led_strip { chain-length = <27>; };
 
 / {
     keymap {
@@ -22,10 +23,10 @@
 
         NAV {
             bindings = <
-&rgb_ug RGB_TOG  &rgb_ug RGB_EFF  &rgb_ug RGB_BRI  &rgb_ug RGB_BRD  &bt BT_SEL 0  &bt BT_SEL 1  &kp HOME        &kp PAGE_UP     &trans        &trans           &trans  &kp PRINTSCREEN
-&rgb_ug RGB_HUI  &rgb_ug RGB_HUD  &trans            &trans            &bt BT_SEL 2  &trans        &kp LEFT_ARROW  &kp DOWN_ARROW  &kp UP_ARROW  &kp RIGHT_ARROW  &trans  &trans
-&rgb_ug RGB_SAI  &rgb_ug RGB_SAD  &trans            &trans            &bt BT_PRV    &bt BT_NXT    &kp END         &kp PAGE_DOWN   &trans        &trans           &trans  &trans
-                                                      &trans          &trans        &trans        &trans          &trans          &trans
+&rgb_ug RGB_TOG  &rgb_ug RGB_EFF  &rgb_ug RGB_BRI  &rgb_ug RGB_BRD  &bt BT_SEL 0  &bt BT_SEL 1    &kp HOME        &kp PAGE_UP     &trans        &trans           &trans  &kp PRINTSCREEN
+&rgb_ug RGB_HUI  &rgb_ug RGB_HUD  &bl BL_TOG       &bl BL_SET 50    &bt BT_SEL 2  &bt BT_SEL 3    &kp LEFT_ARROW  &kp DOWN_ARROW  &kp UP_ARROW  &kp RIGHT_ARROW  &trans  &trans
+&rgb_ug RGB_SAI  &rgb_ug RGB_SAD  &rgb_ug RGB_BRI  &rgb_ug RGB_BRD  &bt BT_PRV    &bt BT_NXT      &kp END         &kp PAGE_DOWN   &trans        &trans           &trans  &trans
+                                                   &trans           &trans        &trans          &trans          &trans          &trans
             >;
         };
 
