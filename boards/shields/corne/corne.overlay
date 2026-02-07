@@ -1,11 +1,11 @@
 / {
     chosen {
-        zmk,underglow = &underglow;
+        zmk,underglow = &led_strip;
     };
 
-    underglow: underglow {
+    led_strip: led_strip {
         compatible = "zmk,rgb-underglow";
         chain-length = <27>;
-        color-order = <1 0 2>;
+        color-order = <2 1 0>;
     };
 };
