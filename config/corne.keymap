@@ -7,6 +7,12 @@
 
 &led_strip { chain-length = <27>; };
 
+&rgb_underglow {
+    effect = <RGB_UNDERGLOW_EFFECT_REACTIVE>;
+    color-hsv = <0 100 40>;   /* red */
+};
+
+
 / {
     keymap {
         compatible = "zmk,keymap";
