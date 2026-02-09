@@ -21,5 +21,21 @@
             /* Hold behavior, then tap behavior */
             bindings = <&kp>, <&kp>;
         };
+
+        tap_hold_macro: tap_hold_macro {
+            compatible = "zmk,behavior-hold-tap";
+            label = "TH_MACRO";
+            #binding-cells = <2>;
+
+            /* Prefer tap when typing fast */
+            flavor = "balanced";
+            quick-tap-ms = <175>;
+            tapping-term-ms = <200>;
+            require-prior-idle-ms = <70>;
+
+            bindings = <&kp>, <&macro_tap>;
+        };
+
+    
     };
 };
