@@ -78,6 +78,8 @@
 &kp LSHFT  &kp Z  &kp X  &kp C                  &kp V                  &kp B        &kp N      &kp M                  &kp COMMA              &kp DOT  &kp SLASH  &kp DEL
                          &kp LGUI               &mo2_rgb               &kp SPACE    &kp ENTER  &mo1_rgb               &kp RGUI
             >;
+
+            label = "base";
         };
 
         NUM {
