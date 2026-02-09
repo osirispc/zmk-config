@@ -20,10 +20,10 @@
             tap-ms = <0>;
             bindings
                 = <&macro_press &mo 1>
-                , <&macro_tap &rgb_ug RGB_COLOR_HSB(0,100,80)>     /* L1 held: RED */
+                , <&macro_tap &rgb_ug RGB_COLOR_HSB(0,100,80)>   /* L1 held: RED */
                 , <&macro_pause_for_release>
                 , <&macro_release &mo 1>
-                , <&macro_tap &rgb_ug RGB_COLOR_HSB(0,0,80)>;      /* release: WHITE */
+                , <&macro_tap &rgb_ug RGB_COLOR_HSB(0,0,80)>;    /* release: WHITE */
         };
 
         mo2_rgb: mo2_rgb {
@@ -33,19 +33,34 @@
             tap-ms = <0>;
             bindings
                 = <&macro_press &mo 2>
-                , <&macro_tap &rgb_ug RGB_COLOR_HSB(240,100,80)>   /* L2 held: BLUE */
+                , <&macro_tap &rgb_ug RGB_COLOR_HSB(240,100,80)> /* L2 held: BLUE */
                 , <&macro_pause_for_release>
                 , <&macro_release &mo 2>
-                , <&macro_tap &rgb_ug RGB_COLOR_HSB(0,0,80)>;      /* release: WHITE */
+                , <&macro_tap &rgb_ug RGB_COLOR_HSB(0,0,80)>;    /* release: WHITE */
+        };
+    };
+
+    /* ==========================================
+     * Home Row Mods (DEFINED ONCE, USED MANY TIMES)
+     * ========================================== */
+    behaviors {
+        homerow_mods: homerow_mods {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HRM";
+
+            #binding-cells = <2>;
+
+            tapping-term-ms = <200>;
+            quick-tap-ms = <0>;
+            flavor = "balanced";
+
+            bindings = <&kp>, <&kp>;
         };
     };
 
     keymap {
         compatible = "zmk,keymap";
 
-        /* --------
-         * BASE
-         * -------- */
         BASE {
             bindings = <
                 &kp ESC   &kp Q    &kp W    &kp E                 &kp R            &kp T        &kp Y        &kp U                  &kp I                 &kp O     &kp P      &kp BSPC
@@ -56,9 +71,6 @@
             >;
         };
 
-        /* ----------------
-         * LAYER 1 – SYMBOLS / NUM (RED via mo1_rgb)
-         * ---------------- */
         NUM {
             bindings = <
                 &kp GRAVE     &kp N1      &kp N2      &kp N3      &kp N4      &kp N5      &kp N6      &kp N7      &kp N8      &kp N9      &kp N0      &trans
@@ -69,9 +81,6 @@
             >;
         };
 
-        /* -----------
-         * LAYER 2 – NAV (BLUE via mo2_rgb)
-         * ----------- */
         NAV {
             bindings = <
                 &rgb_ug RGB_TOG  &rgb_ug RGB_EFF  &rgb_ug RGB_COLOR_HSB(0,100,50)    &rgb_ug RGB_COLOR_HSB(236,100,50)  &bt BT_SEL 0  &bt BT_SEL 1    &kp HOME   &kp PG_UP  &trans   &trans    &trans    &kp PSCRN
