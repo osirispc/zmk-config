@@ -84,10 +84,10 @@
 
         NUM {
             bindings = <
-&kp GRAVE   &kp N1      &kp N2      &kp N3      &kp N4      &kp N5        &kp N6      &kp N7      &kp N8      &kp N9      &kp N0        &trans
-&kp LS(N1)  &kp LS(N2)  &kp LS(N3)  &kp LS(N4)  &kp LS(N5)  &kp LS(N6)    &kp LS(N7)  &kp LS(N8)  &kp LS(N9)  &kp LS(N0)  &kp PIPE      &kp BSLH
-&kp DQT     &kp SQT     &kp UNDER   &kp EQUAL   &kp MINUS   &kp PLUS      &kp LBRC    &kp RBRC    &kp LBKT    &kp RBKT    &kp LS(LBKT)  &kp LS(BSLH)
-                                    &trans      &trans      &trans        &trans      &trans      &trans
+&kp GRAVE   &kp N1        &kp N2        &kp HASH      &kp DOLLAR    &kp PERCENT    &kp CARET     &kp AMPERSAND  &kp ASTERISK  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &trans
+&kp LS(N1)  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_4  &kp N5         &kp NUMBER_6  &kp N7         &kp N8        &kp N9                &kp NUMBER_0           &kp PIPE
+&kp DQT     &kp SQT       &kp UNDER     &kp EQUAL     &kp MINUS     &kp PLUS       &kp LBRC      &kp RBRC       &kp LBKT      &kp RBKT              &kp LS(LBKT)           &kp LS(BSLH)
+                                        &trans        &trans        &trans         &trans        &trans         &trans
             >;
 
             label = "numbers";
