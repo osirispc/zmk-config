@@ -1,0 +1,25 @@
+/ {
+    behaviors {
+        /* Home-row mod-taps tuned for split + BLE */
+        homerow_mods: homerow_mods {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HRM";
+            #binding-cells = <2>;
+
+            /* Good “tap first unless clearly holding” behavior */
+            flavor = "balanced";
+
+            /* If you’re rolling fast, favor taps */
+            quick-tap-ms = <175>;
+
+            /* Hold threshold */
+            tapping-term-ms = <200>;
+
+            /* Helps prevent accidental holds during fast typing */
+            require-prior-idle-ms = <70>;
+
+            /* Hold behavior, then tap behavior */
+            bindings = <&kp>, <&kp>;
+        };
+    };
+};
