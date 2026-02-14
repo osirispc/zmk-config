@@ -86,7 +86,7 @@
                             &bt BT_CLR       &none             &none             &none             &none             &none
 
         /* Row 3: the two """save me""" keys */
-        &none               &settings_reset   &sys_reset        &none             &none             &none
+        &none               &bootloader   &bootloader        &none             &none             &none
                             &none            &none             &none             &none             &none             &none
 
         /* Thumbs */
