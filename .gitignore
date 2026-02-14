@@ -1,1 +1,4 @@
 config/corne.conf.bak.*
+
+# local backups
+config/*.bak.*
