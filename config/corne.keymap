@@ -1,13 +1,11 @@
 /*
- * Corne (3x6_3) keymap — stable baseline + recovery layer
+ * Corne (3x6_3) keymap - stable baseline + recovery layer
  *
  * Layers:
  * 0 BASE - normal typing
  * 1 NUM  - numbers/symbols
- * 2 NAV  - arrows/navigation
+ * 2 NAV  - arrows/navigation + common edit shortcuts
  * 3 SET  - Bluetooth + RGB + resets (recovery)
- *
- * Note: Uses "display-name" (label is deprecated). :contentReference[oaicite:1]{index=1}
  */
 
 #include <behaviors.dtsi>
@@ -15,89 +13,85 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/rgb.h>
 
-&caps_word {
-    continue-list = <UNDERSCORE MINUS BACKSPACE DEL>;
-};
-
 / {
-    keymap {
-        compatible = "zmk,keymap";
+  keymap {
+    compatible = "zmk,keymap";
 
-        /* =========================
-         * 0) BASE
-         * ========================= */
-        base_layer {
-            display-name = "BASE";
-            bindings = <
-                /* Row 1 */
-                &kp ESC    &kp Q     &kp W     &kp E     &kp R     &kp T           &kp Y     &kp U     &kp I     &kp O     &kp P     &kp DEL
-                /* Row 2 */
-                &kp TAB    &kp A     &kp S     &kp D     &kp F     &kp G           &kp H     &kp J     &kp K     &kp L     &kp SEMI  &kp SQT
-                /* Row 3 */
-                &kp LSHFT  &kp Z     &kp X     &kp C     &kp V     &kp B           &kp N     &kp M     &kp COMMA &kp DOT   &kp FSLH  &kp RSHFT
+    /* =========================
+     * 0 BASE
+     * ========================= */
+    base_layer {
+      display-name = "BASE";
+      bindings = <
+        /* Row 1 */
+        &kp ESC    &kp Q     &kp W     &kp E     &kp R     &kp T           &kp Y     &kp U     &kp I     &kp O     &kp P     &kp DEL
+        /* Row 2 */
+        &kp TAB    &kp A     &kp S     &kp D     &kp F     &kp G           &kp H     &kp J     &kp K     &kp L     &kp SEMI  &kp SQT
+        /* Row 3 */
+        &kp LSHFT  &kp Z     &kp X     &kp C     &kp V     &kp B           &kp N     &kp M     &kp COMMA &kp DOT   &kp FSLH  &kp RSHFT
 
-                /* Thumbs (L3 + R3) */
-                &mo 2      &kp SPACE &mo 1                                   &mo 3      &kp ENTER &kp BSPC
-            >;
-        };
-
-        /* =========================
-         * 1) NUM
-         * ========================= */
-        num_layer {
-            display-name = "NUM";
-            bindings = <
-                /* Row 1 */
-                &kp GRAVE  &kp N1    &kp N2    &kp N3    &kp N4    &kp N5          &kp N6    &kp N7    &kp N8    &kp N9    &kp N0    &kp BSPC
-                /* Row 2 */
-                &kp CAPS   &kp EXCL  &kp AT    &kp HASH  &kp DLLR  &kp PRCNT       &kp CARET &kp AMPS  &kp STAR  &kp LPAR  &kp RPAR  &kp EQUAL
-                /* Row 3 */
-                &kp LSHFT  &kp LBKT  &kp RBKT  &kp LBRACE &kp RBRACE &kp PIPE       &kp MINUS &kp PLUS  &kp UNDER &kp BSLH  &kp TILDE &kp RSHFT
-
-                /* Thumbs */
-                &mo 2      &kp SPACE &to 0                                   &mo 3      &kp ENTER &kp BSPC
-            >;
-        };
-
-        /* =========================
-         * 2) NAV
-         * ========================= */
-        nav_layer {
-            display-name = "NAV";
-            bindings = <
-                /* Row 1 */
-                &kp ESC    &kp HOME  &kp UP    &kp END   &kp PG_UP &kp INS         &kp PSCRN &kp PG_UP &kp UP    &kp PG_DN &kp VOLU  &kp DEL
-                /* Row 2 */
-                &kp TAB    &kp LEFT  &kp DOWN  &kp RIGHT &kp PG_DN &kp DEL         &kp CAPS  &kp LEFT  &kp DOWN  &kp RIGHT &kp VOLD  &kp MUTE
-                /* Row 3 */
-                &kp LCTRL  &kp UNDO  &kp CUT   &kp COPY  &kp PASTE &kp REDO        &kp APP   &kp HOME  &kp END   &kp PG_UP &kp PG_DN &kp RCTRL
-
-                /* Thumbs */
-                &to 0      &kp SPACE &mo 1                                   &mo 3      &kp ENTER &kp BSPC
-            >;
-        };
-
-        /* =========================
-         * 3) SET (Recovery)
-         * ========================= */
-        set_layer {
-            display-name = "SET";
-            bindings = <
-                /* Row 1: Base + RGB on/off/brightness/effect */
-                &to 0               &rgb_ug RGB_TOG   &rgb_ug RGB_BRI   &rgb_ug RGB_BRD   &rgb_ug RGB_EFF   &rgb_ug RGB_EFR
-                                  &bt BT_PRV         &bt BT_NXT        &bt BT_SEL 0      &bt BT_SEL 1      &bt BT_SEL 2      &bt BT_SEL 3
-
-                /* Row 2: Hue/Sat controls + BT clear + Caps Word */
-                &caps_word          &rgb_ug RGB_HUI   &rgb_ug RGB_HUD   &rgb_ug RGB_SAI   &rgb_ug RGB_SAD   &rgb_ug RGB_SPI
-                                  &bt BT_CLR         &none             &none             &none             &none             &none
-
-                /* Row 3: The “two keys that save the night” */
-                &none               &settings_reset   &sys_reset        &none             &none             &none
-                                  &none             &none             &none             &none             &none             &none
-
-                /* Thumbs */
-                &to 0              &kp SPACE          &to 0                                  &to 0           &kp ENTER        &kp BSPC
-            >;
-        };
+        /* Thumbs (L3 + R3) */
+        &mo 2      &kp SPACE &mo 1                                   &mo 3      &kp ENTER &kp BSPC
+      >;
     };
+
+    /* =========================
+     * 1 NUM
+     * ========================= */
+    num_layer {
+      display-name = "NUM";
+      bindings = <
+        /* Row 1 */
+        &kp GRAVE  &kp N1    &kp N2    &kp N3    &kp N4    &kp N5          &kp N6    &kp N7    &kp N8    &kp N9    &kp N0    &kp BSPC
+        /* Row 2 */
+        &kp CAPS   &kp EXCL  &kp AT    &kp HASH  &kp DLLR  &kp PRCNT       &kp CARET &kp AMPS  &kp STAR  &kp LPAR  &kp RPAR  &kp EQUAL
+        /* Row 3 */
+        &kp LSHFT  &kp LBKT  &kp RBKT  &kp LBRACE &kp RBRACE &kp PIPE       &kp MINUS &kp PLUS  &kp UNDER &kp BSLH  &kp TILDE &kp RSHFT
+
+        /* Thumbs */
+        &mo 2      &kp SPACE &to 0                                   &mo 3      &kp ENTER &kp BSPC
+      >;
+    };
+
+    /* =========================
+     * 2 NAV
+     * ========================= */
+    nav_layer {
+      display-name = "NAV";
+      bindings = <
+        /* Row 1 */
+        &kp ESC    &kp HOME  &kp UP    &kp END   &kp PG_UP &kp INS         &kp INS   &kp PG_UP &kp UP    &kp PG_DN &kp END   &kp DEL
+        /* Row 2 */
+        &kp TAB    &kp LEFT  &kp DOWN  &kp RIGHT &kp PG_DN &kp DEL         &kp BSPC  &kp LEFT  &kp DOWN  &kp RIGHT &kp HOME  &kp ENTER
+        /* Row 3: common edit shortcuts as Ctrl+... (valid syntax) */
+        &kp LCTRL  &kp LC(Z) &kp LC(X) &kp LC(C) &kp LC(V) &kp LC(Y)       &kp RCTRL &kp LC(A) &kp LC(S) &kp LC(F) &kp LC(P) &kp RALT
+
+        /* Thumbs */
+        &to 0      &kp SPACE &mo 1                                   &mo 3      &kp ENTER &kp BSPC
+      >;
+    };
+
+    /* =========================
+     * 3 SET (Recovery)
+     * ========================= */
+    set_layer {
+      display-name = "SET";
+      bindings = <
+        /* Row 1: Base + RGB + BT select */
+        &to 0               &rgb_ug RGB_TOG   &rgb_ug RGB_BRI   &rgb_ug RGB_BRD   &rgb_ug RGB_EFF   &rgb_ug RGB_EFR
+                            &bt BT_PRV       &bt BT_NXT        &bt BT_SEL 0      &bt BT_SEL 1      &bt BT_SEL 2      &bt BT_SEL 3
+
+        /* Row 2: Hue/Sat + BT clear */
+        &none               &rgb_ug RGB_HUI   &rgb_ug RGB_HUD   &rgb_ug RGB_SAI   &rgb_ug RGB_SAD   &none
+                            &bt BT_CLR       &none             &none             &none             &none             &none
+
+        /* Row 3: the two """save me""" keys */
+        &none               &settings_reset   &sys_reset        &none             &none             &none
+                            &none            &none             &none             &none             &none             &none
+
+        /* Thumbs */
+        &to 0              &kp SPACE          &to 0                                  &to 0           &kp ENTER        &kp BSPC
+      >;
+    };
+  };
 };
