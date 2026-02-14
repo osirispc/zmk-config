@@ -46,7 +46,7 @@
         /* Row 2 */
         &kp CAPS   &kp EXCL  &kp AT    &kp HASH  &kp DLLR  &kp PRCNT       &kp CARET &kp AMPS  &kp STAR  &kp LPAR  &kp RPAR  &kp EQUAL
         /* Row 3 */
-        &kp LSHFT  &kp LBKT  &kp RBKT  &kp LBRACE &kp RBRACE &kp PIPE       &kp MINUS &kp PLUS  &kp UNDER &kp BSLH  &kp TILDE &kp RSHFT
+        &kp LSHFT  &kp LBKT  &kp RBKT  &kp LBRC &kp RBRC &kp PIPE       &kp MINUS &kp PLUS  &kp UNDER &kp BSLH  &kp TILDE &kp RSHFT
 
         /* Thumbs */
         &mo 2      &kp SPACE &to 0                                   &mo 3      &kp ENTER &kp BSPC
