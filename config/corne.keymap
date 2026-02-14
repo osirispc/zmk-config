@@ -22,12 +22,12 @@
                 <&macro_press>,
                 <&mo 1>,
                 <&macro_tap>,
-                <&rgb_ug RGB_COLOR_HSB(231,100,50)>,
+                <&rgb_ug RGB_COLOR_HSB_CMD RGB_COLOR_HSB_VAL(231,100,50)>,
                 <&macro_pause_for_release>,
                 <&macro_release>,
                 <&mo 1>,
                 <&macro_tap>,
-                <&rgb_ug RGB_COLOR_HSB(0,100,50)>;
+                <&rgb_ug RGB_COLOR_HSB_CMD RGB_COLOR_HSB_VAL(0,100,50)>;
 
             /* release: WHITE */
 
@@ -43,12 +43,12 @@
                 <&macro_press>,
                 <&mo 2>,
                 <&macro_tap>,
-                <&rgb_ug RGB_COLOR_HSB(294,100,48)>,
+                <&rgb_ug RGB_COLOR_HSB_CMD RGB_COLOR_HSB_VAL(294,100,48)>,
                 <&macro_pause_for_release>,
                 <&macro_release>,
                 <&mo 2>,
                 <&macro_tap>,
-                <&rgb_ug RGB_COLOR_HSB(0,100,50)>;
+                <&rgb_ug RGB_COLOR_HSB_CMD RGB_COLOR_HSB_VAL(0,100,50)>;
 
             /* release: WHITE */
 
@@ -93,12 +93,12 @@
                 <&macro_press>,
                 <&mo 3>,
                 <&macro_tap>,
-                <&rgb_ug RGB_COLOR_HSB(122,100,50)>,
+                <&rgb_ug RGB_COLOR_HSB_CMD RGB_COLOR_HSB_VAL(122,100,50)>,
                 <&macro_pause_for_release>,
                 <&macro_release>,
                 <&mo 3>,
                 <&macro_tap>,
-                <&rgb_ug RGB_COLOR_HSB(0,100,50)>;
+                <&rgb_ug RGB_COLOR_HSB_CMD RGB_COLOR_HSB_VAL(0,100,50)>;
 
             label = "SETTINGS";
         };
