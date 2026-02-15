@@ -13,7 +13,7 @@
             quick-tap-ms = <175>;
 
             /* Hold threshold */
-            tapping-term-ms = <200>;
+            tapping-term-ms = <260>;
 
             /* Helps prevent accidental holds during fast typing */
             require-prior-idle-ms = <70>;
