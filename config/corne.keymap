@@ -128,7 +128,7 @@
 
         NAV {
             bindings = <
-&rgb_ug RGB_TOG  &rgb_ug RGB_EFF  &rgb_ug RGB_COLOR_HSB(0,100,50)  &rgb_ug RGB_COLOR_HSB(236,100,50)  &bt BT_SEL 0  &bt BT_SEL 1    &kp HOME  &kp PG_UP  &trans  &trans     &trans  &kp PSCRN
+&cooper_tag      &rgb_ug RGB_EFF  &rgb_ug RGB_COLOR_HSB(0,100,50)  &rgb_ug RGB_COLOR_HSB(236,100,50)  &bt BT_SEL 0  &bt BT_SEL 1    &kp HOME  &kp PG_UP  &trans  &trans     &trans  &kp PSCRN
 &rgb_ug RGB_HUI  &rgb_ug RGB_HUD  &rgb_ug RGB_SPI                  &rgb_ug RGB_SPD                    &bt BT_SEL 2  &bt BT_SEL 3    &kp LEFT  &kp DOWN   &kp UP  &kp RIGHT  &trans  &trans
 &rgb_ug RGB_SAI  &rgb_ug RGB_SAD  &rgb_ug RGB_BRI                  &rgb_ug RGB_BRD                    &bt BT_PRV    &bt BT_NXT      &kp END   &kp PG_DN  &trans  &trans     &trans  &trans
                                                                    &trans                             &trans        &trans          &trans    &trans     &trans
