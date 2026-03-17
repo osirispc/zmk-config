@@ -5,37 +5,11 @@
             compatible = "zmk,behavior-hold-tap";
             label = "HRM";
             #binding-cells = <2>;
-
-            /* Good “tap first unless clearly holding” behavior */
             flavor = "balanced";
-
-            /* If you’re rolling fast, favor taps */
             quick-tap-ms = <175>;
-
-            /* Hold threshold */
             tapping-term-ms = <260>;
-
-            /* Helps prevent accidental holds during fast typing */
             require-prior-idle-ms = <70>;
-
-            /* Hold behavior, then tap behavior */
             bindings = <&kp>, <&kp>;
         };
-
-        tap_hold_macro: tap_hold_macro {
-            compatible = "zmk,behavior-hold-tap";
-            label = "TH_MACRO";
-            #binding-cells = <2>;
-
-            /* Prefer tap when typing fast */
-            flavor = "balanced";
-            quick-tap-ms = <175>;
-            tapping-term-ms = <200>;
-            require-prior-idle-ms = <70>;
-
-            bindings = <&kp>, <&macro_tap>;
-        };
-
-    
     };
 };
