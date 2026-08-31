@@ -24,7 +24,8 @@
                 <&macro_tap>,
                 <&rgb_ug RGB_COLOR_HSB(231,100,50)>,
                 <&macro_pause_for_release>,
-                <&macro_release>;
+                <&macro_release>,
+                <&mo 1>;
 
             /* release: WHITE */
 
@@ -42,7 +43,8 @@
                 <&macro_tap>,
                 <&rgb_ug RGB_COLOR_HSB(294,100,48)>,
                 <&macro_pause_for_release>,
-                <&macro_release>;
+                <&macro_release>,
+                <&mo 2>;
 
             /* release: WHITE */
 
@@ -89,7 +91,8 @@
                 <&macro_tap>,
                 <&rgb_ug RGB_COLOR_HSB(123,100,50)>,
                 <&macro_pause_for_release>,
-                <&macro_release>;
+                <&macro_release>,
+                <&mo 3>;
 
             label = "MO3_SET";
         };
